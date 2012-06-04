@@ -10,10 +10,6 @@ namespace Testr
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
             base.ApplicationStartup(container, pipelines);
-
-            var connection = new System.Data.SQLite.SQLiteConnection("data.db");
-
-            container.Register<IDbConnection>(connection);
         }
     }
 }
