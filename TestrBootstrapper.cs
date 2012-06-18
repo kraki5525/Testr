@@ -1,15 +1,12 @@
-﻿using System.Data;
+﻿using System;
+
 using Nancy;
-using Nancy.Bootstrapper;
-using TinyIoC;
+using Nancy.Bootstrappers.Autofac;
 
 namespace Testr
 {
-    public class TestrBootstrapper : DefaultNancyBootstrapper
+    public class TestrBootstrapper : AutofacNancyBootstrapper
     {
-        protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
-        {
-            base.ApplicationStartup(container, pipelines);
-        }
+
     }
 }
