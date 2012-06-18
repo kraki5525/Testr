@@ -34,30 +34,33 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper">
-      <HintPath>..\packages\Dapper.1.8\lib\net40\Dapper.dll</HintPath>
+      <HintPath>packages\Dapper.1.9\lib\net40\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="FluentValidation">
-      <HintPath>..\packages\FluentValidation.3.3.1.0\lib\Net40\FluentValidation.dll</HintPath>
+      <HintPath>packages\FluentValidation.3.3.1.0\lib\Net40\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Nancy">
-      <HintPath>..\packages\Nancy.0.11.0\lib\net40\Nancy.dll</HintPath>
+      <HintPath>packages\Nancy.0.11.0\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms">
+      <HintPath>packages\Nancy.Authentication.Forms.0.11.0\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Hosting.Aspnet">
-      <HintPath>..\packages\Nancy.Hosting.Aspnet.0.11.0\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
+      <HintPath>packages\Nancy.Hosting.Aspnet.0.11.0\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Validation.FluentValidation">
-      <HintPath>..\packages\Nancy.Validation.FluentValidation.0.11.0\lib\net40\Nancy.Validation.FluentValidation.dll</HintPath>
+      <HintPath>packages\Nancy.Validation.FluentValidation.0.11.0\lib\net40\Nancy.Validation.FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.ViewEngines.Razor">
-      <HintPath>..\packages\Nancy.Viewengines.Razor.0.11.0\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
+      <HintPath>packages\Nancy.Viewengines.Razor.0.11.0\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.SQLite">
-      <HintPath>..\packages\System.Data.SQLite.1.0.81.0\lib\net40\System.Data.SQLite.dll</HintPath>
+      <HintPath>packages\System.Data.SQLite.1.0.81.0\lib\net40\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>..\packages\System.Data.SQLite.1.0.81.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+      <HintPath>packages\System.Data.SQLite.1.0.81.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -69,7 +72,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\Nancy.Viewengines.Razor.0.11.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <HintPath>packages\Nancy.Viewengines.Razor.0.11.0\lib\net40\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
