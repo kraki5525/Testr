@@ -5,7 +5,7 @@ using Nancy.Bootstrappers.Autofac;
 
 namespace Testr
 {
-    public class TestrBootstrapper : AutofacNancyBootstrapper
+    public class TestrBootstrapper : DefaultNancyBootstrapper //AutofacNancyBootstrapper
     {
 
     }

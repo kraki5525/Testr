@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>Grid Example</title>
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS
+  ================================================== -->
+    <link href="../base.css" rel="stylesheet" type="text/css">
+    <link href="../skeleton.css" rel="stylesheet" type="text/css">
+    <link href="../layout.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="../../Images/favicon.ico">
+    <link rel="apple-touch-icon" href="../../Images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../Images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../Images/apple-touch-icon-114x114.png">
+    <style>
+        #grid .column, #grid .columns
+        {
+            background: #DDD;
+            height: 25px;
+            line-height: 25px;
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #555;
+            font-size: 12px;
+            font-weight: bold;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Primary Page Layout
+    ================================================== -->
+    <!-- Delete everything in this .container and get started on your own site! -->
+    <!-- The container is a centered 960px -->
+    <div class="container">
+        <div class="doc-section clearfix" id="grid">
+            <!-- Give column value in word form (one, two..., twelve) -->
+            <div class="sixteen columns">
+                Full width column
+            </div>
+            <!-- Sweet nested columns cleared with a clearfix class -->
+            <div class="six columns clearfix">
+                <!-- In nested columns give the first column a class of alpha
+    and the second a class of omega -->
+                <div class="three columns alpha">
+                    Three columns</div>
+                <div class="three columns omega">
+                    Three columns</div>
+            </div>
+            <!-- Sweet nested columns cleared by wrapping a .row -->
+            <div class="five columns">
+                <div class="row">
+                    <div class="three columns alpha">
+                        Three columns</div>
+                    <div class="two columns omega">
+                        Two columns</div>
+                </div>
+            </div>
+            <!-- Sweet nested columns cleared by <br class="clear"> -->
+            <div class="five columns">
+                <div class="three columns alpha">
+                    Three columns</div>
+                <div class="two columns omega">
+                    Two columns</div>
+                <br class="clear" />
+            </div>
+            <!-- Can push over by columns -->
+            <div class="five columns offset-by-one">
+                Five columns, offset by one
+            </div>
+        </div>
+        <!-- Note: To clear columns (both nested and just stacked columns right inside the 
+.container, you can give the parent a class of "clearfix," wrap each row of columns in a 
+"<div class='row'>" or follow the last column in a row with a "<br class='clear'>." They 
+all work and it's up to your personal preference. -->
+        <!-- Interested in a 12 column grid? There is an unofficial project on Github here: https://github.com/offshoot/Skeleton -->
+        </div>
+    </div>
+</body>
+</html>
