@@ -10,7 +10,7 @@ namespace Testr.Models.Queries
 {
     public class AllQuizesQuery : IQuery<IEnumerable<Quiz>>
     {
-        public IEnumerable<Quiz> Execute(IDbConnection connection)
+        public IEnumerable<Quiz> Execute(IDbConnection connection, IDbTransaction transaction = null)
         {
             return connection.Query<Quiz>("select id, name from Quiz").ToArray();
         }

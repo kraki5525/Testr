@@ -41,7 +41,7 @@ namespace Testr.Modules
 
                                     quiz = repository.Save(quizSaveNewQuery);
 
-                                    return Response.AsRedirect(string.Format("/{0}/", quiz.Id));
+                                    return Response.AsRedirect(string.Format("/quiz/{0}/", quiz.Id));
                                 };
         }
     }

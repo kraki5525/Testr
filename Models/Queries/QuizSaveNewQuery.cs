@@ -17,13 +17,10 @@ namespace Testr.Models.Queries
             this.Quiz = quiz;
         }
 
-        public Quiz Execute(IDbConnection connection)
+        public Quiz Execute(IDbConnection connection, IDbTransaction transaction)
         {
-            using (var transaction = connection.BeginTransaction())
-            {
                 Quiz.Id = connection.Execute("insert into quiz (name) values (@name)", new { name = Quiz.Name }, transaction);
                 return Quiz;
-            }
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Testr.Models.Queries
             Name = name;
         }
 
-        public Quiz Execute(IDbConnection connection)
+        public Quiz Execute(IDbConnection connection, IDbTransaction transaction = null)
         {
             return connection.Query<Quiz>("select Id, Name from Quiz where name = @name", new { name = Name }).First();
         }

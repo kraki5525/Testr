@@ -23,7 +23,7 @@ namespace Testr.Models
                 connection.ConnectionString = cs.ConnectionString;
                 connection.Open();
 
-                return query.Execute(connection);
+                return query.Execute(connection, null);
             }
         }
 
@@ -37,7 +37,20 @@ namespace Testr.Models
                 connection.ConnectionString = cs.ConnectionString;
                 connection.Open();
 
-                return query.Execute(connection);
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        var o = query.Execute(connection, transaction);
+                        transaction.Commit();
+                        return o;
+                    }
+                    catch (Exception e)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
             }
         }
     }
