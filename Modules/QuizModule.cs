@@ -17,27 +17,31 @@ namespace Testr.Modules
         public QuizModule(Repository repository) : base("/quiz")
         {
             Get["/{id}/"] = o =>
-                                  {
-                                      using (var connection = new SQLiteConnection("data.db"))
-                                      {
-                                          var quiz = repository.Load(new QuizByIdQuery(o.id));
-                                          return View["Quiz", quiz];
-                                      }
-                                  };
+                                {
+                                    var quiz = repository.Load(new QuizByIdQuery(o.id));
+                                    ViewBag.Title = quiz.Name;
+                                    return View["Quiz/Quiz", quiz];
+                                };
+            Get["/list/"] = o =>
+                                {
+                                    ViewBag.Title = "Quiz List";
+                                    var quizes = repository.Load(new AllQuizesQuery());
+                                    return View["Quiz/List", quizes];
+                                };
             Get["/new/"] = o =>
                                 {
                                     ViewBag.Title = "New Quiz";
-                                    return View["EditQuiz", null];
+                                    return View["Quiz/Edit", null];
                                 };
 
             Post["/new/"] = o =>
                                 {
                                     var quiz = this.Bind<Quiz>();
-                                    var quizSaveCommand = new QuizSaveCommand(quiz);
+                                    var quizSaveNewQuery = new QuizSaveNewQuery(quiz);
 
-                                    repository.Execute(quizSaveCommand);
+                                    quiz = repository.Save(quizSaveNewQuery);
 
-                                    return View["EditQuiz", quiz];
+                                    return Response.AsRedirect(string.Format("/{0}/", quiz.Id));
                                 };
         }
     }

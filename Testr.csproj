@@ -115,8 +115,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Commands\ICommand.cs" />
-    <Compile Include="Models\Commands\QuizSaveCommand.cs" />
+    <Compile Include="Models\Queries\QuizSaveNewQuery.cs" />
     <Compile Include="Models\FinishedQuiz.cs" />
+    <Compile Include="Models\Queries\AllQuizesQuery.cs" />
     <Compile Include="Models\Queries\IQuery.cs" />
     <Compile Include="Models\Queries\QuizByIdQuery.cs" />
     <Compile Include="Models\Queries\QuizByNameQuery.cs" />
@@ -138,9 +139,12 @@
     <Content Include="Views\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Data\data.db" />
     <Content Include="Views\Quiz.cshtml" />
     <Content Include="Views\EditQuiz.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App_Data\testr.sqlite" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

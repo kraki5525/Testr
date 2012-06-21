@@ -27,7 +27,7 @@ namespace Testr.Models
             }
         }
 
-        public void Execute(ICommand command)
+        public T Save<T>(IQuery<T> query)
         {
             var cs = ConfigurationManager.ConnectionStrings["db"];
             var factory = DbProviderFactories.GetFactory(cs.ProviderName);
@@ -37,7 +37,7 @@ namespace Testr.Models
                 connection.ConnectionString = cs.ConnectionString;
                 connection.Open();
 
-                command.Execute(connection);
+                return query.Execute(connection);
             }
         }
     }

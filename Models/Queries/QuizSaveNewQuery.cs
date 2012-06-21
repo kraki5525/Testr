@@ -6,22 +6,23 @@ using System.Web;
 
 using Dapper;
 
-namespace Testr.Models.Commands
+namespace Testr.Models.Queries
 {
-    public class QuizSaveCommand : ICommand
+    public class QuizSaveNewQuery : IQuery<Quiz>
     {
         public Quiz Quiz { get; set; }
 
-        public QuizSaveCommand(Quiz quiz)
+        public QuizSaveNewQuery(Quiz quiz)
         {
             this.Quiz = quiz;
         }
 
-        public void Execute(IDbConnection connection)
+        public Quiz Execute(IDbConnection connection)
         {
             using (var transaction = connection.BeginTransaction())
             {
-                connection.Execute("insert into quiz select @name", new { name = Quiz.Name }, transaction);
+                Quiz.Id = connection.Execute("insert into quiz (name) values (@name)", new { name = Quiz.Name }, transaction);
+                return Quiz;
             }
         }
     }
