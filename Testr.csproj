@@ -139,8 +139,8 @@
     <Content Include="Views\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Quiz.cshtml" />
-    <Content Include="Views\EditQuiz.cshtml" />
+    <Content Include="Views\Quiz\Quiz.cshtml" />
+    <Content Include="Views\Quiz\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
