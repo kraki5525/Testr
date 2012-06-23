@@ -20,7 +20,7 @@ namespace Testr.Modules
                                 {
                                     var quiz = repository.Load(new QuizByIdQuery(o.id));
                                     ViewBag.Title = quiz.Name;
-                                    return View["Quiz/Quiz", quiz];
+                                    return View["Quiz/View", quiz];
                                 };
             Get["/list/"] = o =>
                                 {
