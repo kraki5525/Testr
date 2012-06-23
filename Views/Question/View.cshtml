@@ -1,0 +1,9 @@
+﻿@model Testr.Models.Question
+
+<div>@Model.Text</div>
+<ul>
+@foreach (var r in @Model.Response)
+{
+    @:<li>@r</li>
+}
+</ul>
