@@ -114,6 +114,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Commands\ICommand.cs" />
     <Compile Include="Models\Queries\QuizSaveNewQuery.cs" />
     <Compile Include="Models\FinishedQuiz.cs" />

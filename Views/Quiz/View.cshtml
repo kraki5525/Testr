@@ -4,4 +4,11 @@
 }
 
 <h3>@Model.Name</h3>
-<div>@Model.Id</div>
+@foreach (var q in @Model.Questions)
+{
+    @:<div>@q.Text</div>
+    foreach (var a in q.Answers)
+    {
+        @:<div>@a.Text</div>
+    }
+}

@@ -1,12 +1,14 @@
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace Testr.Models
 {
-    public class Question
+    public class Answer
     {
         public long Id { get; set; }
         public string Text { get; set; }
-        public int SortOrder { get; set; }
-        public IEnumerable<Answer> Answers { get; set; }
+        public bool IsCorrect { get; set; }
     }
 }
