@@ -4,6 +4,6 @@
 
 <ul>
 @foreach (var quiz in @Model){
-    @: <li><a href="/quiz/{@quiz.Id/">@quiz.Name</a></li>
+    @: <li><a href="/quiz/{@quiz.Id/">@quiz.Name</a> (@quiz.Question.Count() questions)</li>
 }
 </ul>    
