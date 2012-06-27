@@ -4,6 +4,26 @@
 }
 
 <form action="/quiz/new/" method="post">
-    <input id="Name" name="Name" type="text" />
-    <input id="Submit" type="submit" value="Create" />
+    <input id="Name" name="Name" type="text" value="@Model.Name" />
+    <div>Questions</div>
+    <ol>
+    @foreach (var q in @Model.Questions)
+    {
+        <li>
+            <div>
+                <span>@q.Text<button>Edit</button><button>Remove</button></span>
+                <div>
+                    <div>Answers</div>
+                    <ul>
+                    @foreach (var a in q.Answers)
+                    {
+                        <li><span>@a.Text<button>Edit</button><button>Remove</button></span></li>
+                    }
+                    </ul>
+                </div>
+            </div>
+        </li>
+    }
+    </ol>
+    <input id="Cancel" type="button" value="Cancel" /> <input id="Submit" type="submit" value="Create" />
 </form>
