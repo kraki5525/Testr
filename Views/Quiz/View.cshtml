@@ -6,9 +6,9 @@
 <h3>@Model.Name</h3>
 @foreach (var q in @Model.Questions)
 {
-    @:<div>@q.Text</div>
-    foreach (var a in q.Answers)
+    <div>@q.Text</div>
+    @foreach (var a in q.Answers)
     {
-        @:<div>@a.Text</div>
+        <div>@a.Text</div>
     }
 }
