@@ -116,12 +116,12 @@
   <ItemGroup>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Commands\ICommand.cs" />
+    <Compile Include="Models\Queries\IEnumerableExtensions.cs" />
     <Compile Include="Models\Queries\QuizSaveNewQuery.cs" />
     <Compile Include="Models\FinishedQuiz.cs" />
     <Compile Include="Models\Queries\AllQuizesQuery.cs" />
     <Compile Include="Models\Queries\IQuery.cs" />
     <Compile Include="Models\Queries\QuizByIdQuery.cs" />
-    <Compile Include="Models\Queries\QuizByNameQuery.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\Repository.cs" />
@@ -143,7 +143,9 @@
     <Content Include="Views\Quiz\View.cshtml" />
     <Content Include="Views\Quiz\Edit.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App_Data\testr.sqlite" />
     <Content Include="Views\Quiz\List.cshtml" />
