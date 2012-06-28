@@ -150,6 +150,7 @@
     <None Include="App_Data\testr.sqlite" />
     <Content Include="Views\Quiz\List.cshtml" />
     <Content Include="Views\Question\View.cshtml" />
+    <Content Include="Views\Quiz\Take.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

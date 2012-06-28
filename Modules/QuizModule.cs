@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SQLite;
+using System.Linq;
 
 using Dapper;
 
@@ -49,6 +50,23 @@ namespace Testr.Modules
 
                                     return Response.AsRedirect(string.Format("/quiz/{0}/", quiz.Id));
                                 };
+
+            Get["/take/{id}/{step}/"] = o =>
+                                {
+                                    var step = (int)(o.step ?? 0);
+                                    var quiz = repository.Load(new QuizByIdQuery(o.id));
+
+                                    if (step >= quiz.Questions.Count())
+                                    {
+                                        return Response.AsRedirect(string.Format("/quiz/review/{0}/", quiz.Id));
+                                    }
+
+                                    var question = quiz.Questions.Skip(step).First();
+
+                                    return Response.AsJson(question);
+                                };
+
+
         }
     }
 }

@@ -8,5 +8,6 @@ namespace Testr.Models
         public string Text { get; set; }
         public int SortOrder { get; set; }
         public IEnumerable<Answer> Answers { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
