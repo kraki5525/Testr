@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Web Developer Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testr", "Testr.csproj", "{952395F5-6995-4B92-A04D-29FBD1B57C4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testr", "Testr\Testr.csproj", "{952395F5-6995-4B92-A04D-29FBD1B57C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testr.Tests", "Testr.Tests\Testr.Tests.csproj", "{63C6B103-2B0C-48B3-97CF-C810F3235E38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{952395F5-6995-4B92-A04D-29FBD1B57C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{952395F5-6995-4B92-A04D-29FBD1B57C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{952395F5-6995-4B92-A04D-29FBD1B57C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C6B103-2B0C-48B3-97CF-C810F3235E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C6B103-2B0C-48B3-97CF-C810F3235E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C6B103-2B0C-48B3-97CF-C810F3235E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C6B103-2B0C-48B3-97CF-C810F3235E38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
