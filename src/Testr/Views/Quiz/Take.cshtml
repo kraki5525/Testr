@@ -8,19 +8,45 @@
     <script type="text/javascript">
         var questionIndex = 0,
             quizId = @Model.Id;
-
+        
         $(document).ready(function () {
-            $.get("/quiz/" + quizId + "/take/" + questionIndex, function(q) {
-                console.log(q);
-                $("div.template")
-                    .autoRender(q);
+            $("#next").on("click", function (event) {
+                questionIndex = questionIndex + 1;
+                loadQuestion(quizId, questionIndex);
+                event.stopImmediatePropagation();
+                return false;
             });
+
+            $("#previous").on("click", function (event) {
+                questionIndex = questionIndex - 1;             
+                loadQuestion(quizId, questionIndex);
+                event.stopImmediatePropagation();
+                return false;
+            });
+
+            loadQuestion(quizId, questionIndex);
         });
+
+        function loadQuestion(quizId, questionIndex) {
+            $.get("/quiz/" + quizId + "/take/" + questionIndex, function(q) {
+                if (q.type == "Review") {
+                    window.location.href = q.value;
+                }
+                else {
+                    $("div.template")
+                        .autoRender(q.value);
+                }
+            });
+        }
     </script>
 }
-<div class="template">
-    <div class="Text"></div>
-    <ol class="Answers">
-        <li class="Text"></li>
-    </ol>
-</div>
+    
+<form action="" method="post">
+    <div class="template">
+        <div class="Text"></div>
+        <ul class="Answers">
+            <li><input type="radio" name="answer" value="" /><span class="Text"></span></li>
+        </ul>
+    </div>
+    <button id="previous">Previous</button><button id="next">Next</button>
+</form>

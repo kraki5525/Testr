@@ -10,6 +10,8 @@ using Nancy.ModelBinding;
 using Testr.Models;
 using Testr.Models.Commands;
 using Testr.Models.Queries;
+using System;
+using System.IO;
 
 namespace Testr.Modules
 {
@@ -53,19 +55,45 @@ namespace Testr.Modules
                                     return View["Quiz/Take", quiz];
                                 };
 
+            Get["/{id}/review/"] = o =>
+                                {
+                                    return Response.AsRedirect("/");
+                                };
+
             Get["/{id}/take/{step}/"] = o =>
                                 {
                                     var step = (int)(o.step ?? 0);
                                     var quiz = repository.Load(new QuizByIdQuery(o.id));
+                                    var contents = "";
 
                                     if (step >= quiz.Questions.Count())
                                     {
-                                        return Response.AsRedirect(string.Format("/quiz/review/{0}/", quiz.Id));
+                                        using (var stream = new MemoryStream())
+                                        {
+                                            var x = View["Quiz/Review", quiz];
+                                            x.Contents(stream);
+
+                                            stream.Position = 0;
+                                            using (var reader = new StreamReader(stream))
+                                            {
+                                                contents = reader.ReadToEnd();
+                                            }
+                                        }
+
+                                        return Response.AsJson(new
+                                        {
+                                            type = "Review",
+                                            value = contents
+                                        });                                      
                                     }
 
                                     var question = quiz.Questions.Skip(step).First();
 
-                                    return Response.AsJson(question);
+                                    return Response.AsJson(new
+                                    {
+                                        type = "Question",
+                                        value = question
+                                    });
                                 };
 
             Get["/{id}/"] = o =>
