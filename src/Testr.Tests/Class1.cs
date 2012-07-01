@@ -5,6 +5,8 @@ using System.Text;
 
 using FluentAssertions;
 
+using Nancy.Testing;
+
 using Xunit;
 
 namespace Testr.Tests
