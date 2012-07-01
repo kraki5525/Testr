@@ -17,12 +17,6 @@ namespace Testr.Modules
     {
         public QuizModule(Repository repository) : base("/quiz")
         {
-            Get["/{id}/"] = o =>
-                                {
-                                    var quiz = repository.Load(new QuizByIdQuery(o.id));
-                                    ViewBag.Title = quiz.Name;
-                                    return View["Quiz/View", quiz];
-                                };
             Get["/list/"] = o =>
                                 {
                                     ViewBag.Title = "Quiz List";
@@ -51,7 +45,15 @@ namespace Testr.Modules
                                     return Response.AsRedirect(string.Format("/quiz/{0}/", quiz.Id));
                                 };
 
-            Get["/take/{id}/{step}/"] = o =>
+            Get["/{id}/take/"] = o =>
+                                {
+                                    var quiz = repository.Load(new QuizByIdQuery(o.id));
+                                    ViewBag.Title = "Taking " + quiz.Name;
+
+                                    return View["Quiz/Take", quiz];
+                                };
+
+            Get["/{id}/take/{step}/"] = o =>
                                 {
                                     var step = (int)(o.step ?? 0);
                                     var quiz = repository.Load(new QuizByIdQuery(o.id));
@@ -66,6 +68,12 @@ namespace Testr.Modules
                                     return Response.AsJson(question);
                                 };
 
+            Get["/{id}/"] = o =>
+            {
+                var quiz = repository.Load(new QuizByIdQuery(o.id));
+                ViewBag.Title = quiz.Name;
+                return View["Quiz/View", quiz];
+            };
 
         }
     }

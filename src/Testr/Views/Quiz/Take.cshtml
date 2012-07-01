@@ -3,6 +3,24 @@
 }
 
 @section Javascript {
-    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/pure_min.js")"></script>
+    <script type="text/javascript">
+        var questionIndex = 0,
+            quizId = @Model.Id;
 
+        $(document).ready(function () {
+            $.get("/quiz/" + quizId + "/take/" + questionIndex, function(q) {
+                console.log(q);
+                $("div.template")
+                    .autoRender(q);
+            });
+        });
+    </script>
 }
+<div class="template">
+    <div class="Text"></div>
+    <ol class="Answers">
+        <li class="Text"></li>
+    </ol>
+</div>

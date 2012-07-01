@@ -103,6 +103,10 @@
     <Content Include="Content\Skeleton\_Examples\Form.html" />
     <Content Include="Content\Skeleton\_Examples\Grid.html" />
     <Content Include="Content\Skeleton\_Examples\Typography.html" />
+    <Content Include="Scripts\jquery-1.7.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.2.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\pure_min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
