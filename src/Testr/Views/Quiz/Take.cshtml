@@ -4,7 +4,7 @@
 
 @section Javascript {
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/pure_min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/handlebars.js")"></script>
     <script type="text/javascript">
         var questionIndex = 0,
             quizId = @Model.Id;
@@ -33,20 +33,26 @@
                     window.location.href = q.value;
                 }
                 else {
-                    $("div.template")
-                        .autoRender(q.value);
+                    var source = $("#template-source").html();
+                    var template = Handlebars.compile(source);
+                    var html = template(q.value);
+
+                    $("#template-destination").html(html);
                 }
             });
         }
     </script>
 }
-    
+<script id="template-source" type="text/x-handlebars-template">
+    <div>{{Text}}</div>
+    <ul>
+        {{#each Answers}}
+            <li><input type="radio" name="answer" value="" /><span>{{Text}}</span>
+        {{/each}}
+    </ul>
+</script>    
 <form action="" method="post">
-    <div class="template">
-        <div class="Text"></div>
-        <ul class="Answers">
-            <li><input type="radio" name="answer" value="" /><span class="Text"></span></li>
-        </ul>
+    <div id="template-destination">
     </div>
     <button id="previous">Previous</button><button id="next">Next</button>
 </form>

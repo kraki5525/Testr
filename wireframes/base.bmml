@@ -1,0 +1,23 @@
+<mockup version="1.0" skin="sketch" measuredW="1314" measuredH="1028" mockupW="1280" mockupH="1024">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="34" y="4" w="1280" h="1024" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1"/>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="49" y="94" w="-1" h="-1" measuredW="104" measuredH="50" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Testr</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::HRule" x="49" y="144" w="1250" h="-1" measuredW="100" measuredH="5" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="1144" y="123" w="-1" h="-1" measuredW="59" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Welcome</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Link" x="1203" y="123" w="-1" h="-1" measuredW="96" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Account%20Clicked%26bm%3BAccount%20Clicked.bmml%26bm%3BAccount%20Clicked.bmml%26bm%3BAccount%20Clicked.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%221169%2C119%2C1265%2C140%22%20href%3D%22Account%2520Clicked.bmml%22%20alt%3D%22Account%20Clicked%22%20id%3D%224%22/%3E</map>
+        <text>Rich%20McCollister</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
